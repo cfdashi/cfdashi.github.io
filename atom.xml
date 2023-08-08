@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>元芳的博客</title>
+  
+  <subtitle>暂时还没想好</subtitle>
+  <link href="https://cfdashi.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://cfdashi.github.io/"/>
+  <updated>2023-08-05T11:02:04.884Z</updated>
+  <id>https://cfdashi.github.io/</id>
+  
+  <author>
+    <name>yuan fang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>article title</title>
+    <link href="https://cfdashi.github.io/2023/08/05/article-title/"/>
+    <id>https://cfdashi.github.io/2023/08/05/article-title/</id>
+    <published>2023-08-05T11:02:04.000Z</published>
+    <updated>2023-08-05T11:02:04.884Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>摘要 首页显示摘要内容（替换成自己的） <span id="more"></span> 正文内容（替换成自己的）</p></blockquote><p>参考文章:<br><a href="">参考链接</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;摘要 首页显示摘要内容（替换成自己的）&lt;/p&gt;&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>this is blog</title>
+    <link href="https://cfdashi.github.io/2023/08/01/this-is-blog/"/>
+    <id>https://cfdashi.github.io/2023/08/01/this-is-blog/</id>
+    <published>2023-08-01T03:15:51.000Z</published>
+    <updated>2023-08-01T03:15:51.379Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://cfdashi.github.io/2023/08/01/hello-world/"/>
+    <id>https://cfdashi.github.io/2023/08/01/hello-world/</id>
+    <published>2023-08-01T03:09:51.416Z</published>
+    <updated>2023-08-01T03:09:51.416Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start">Quick Start</h2><h3 id="create-a-new-post">Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server">Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files">Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites">Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
