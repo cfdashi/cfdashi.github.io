@@ -349,7 +349,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                暂时还没想好
+                一个充满bug的网站，正在努力
                 
             </div>
 
@@ -361,9 +361,9 @@
                     var typed = new Typed("#subtitle", {
                         strings: [ 
                             
-                                "从来没有真正的绝境, 只有心灵的迷途",
+                                "心有繁华似锦，归来不负韶华",
                             
-                                "Never really desperate, only the lost of the soul",
+                                "The heart is full of prosperity, and when you return, you will not disappoint the youth",
                             
                         ],
                         startDelay: 300,
@@ -777,7 +777,7 @@
             
                 <span id="icp"><img src="/medias/icp.png"
                                     style="vertical-align: text-bottom;"/>
-                <a href="/null" target="_blank"></a>
+                <a href="https://console.huaweicloud.com/beian/" target="_blank">晋ICP备2023015275号</a>
             </span>
             
         </div>
@@ -972,6 +972,14 @@ $(function () {
     
 
     <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
     
 
      
