@@ -6,7 +6,7 @@
   <link href="https://cfdashi.github.io/atom.xml" rel="self"/>
   
   <link href="https://cfdashi.github.io/"/>
-  <updated>2023-08-08T16:08:56.035Z</updated>
+  <updated>2023-08-01T03:15:51.379Z</updated>
   <id>https://cfdashi.github.io/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>记录</title>
-    <link href="https://cfdashi.github.io/2023/08/05/article-title/"/>
-    <id>https://cfdashi.github.io/2023/08/05/article-title/</id>
-    <published>2023-08-05T11:02:00.000Z</published>
-    <updated>2023-08-08T16:08:56.035Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>摘要 记实习的第一份独立linux挂载专项测试总结文档） <span id="more"></span></p></blockquote><p>占楼</p><p>参考文章:<br><a href="">参考链接</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;摘要 记实习的第一份独立linux挂载专项测试总结文档）&lt;/p&gt;&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="linux" scheme="https://cfdashi.github.io/categories/linux/"/>
-    
-    
-    <category term="经验" scheme="https://cfdashi.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-  </entry>
   
   <entry>
     <title>this is blog</title>
@@ -68,6 +46,28 @@
     
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>windows-nfs挂载记录</title>
+    <link href="https://cfdashi.github.io/2023/05/15/article-title/"/>
+    <id>https://cfdashi.github.io/2023/05/15/article-title/</id>
+    <published>2023-05-15T15:02:00.000Z</published>
+    <updated>2023-08-09T15:24:42.569Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>摘要 （记录实习工作） <span id="more"></span></p></blockquote><p>&nbsp; &nbsp;在工作中可能会遇到一些需要具体去采样数据以来分析的情况。因此本次记录主要内容便是通过windows——nfs服务器挂载到猫眼板下来实时采集数据。</p><p>(设备使用11pin或锁板供电，连接USB)</p><p>一、安装驱动（安装驱动前禁用数字签名）</p><p>——kindle_rndis.inf_amd64-v1.0.0.1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p><p>  打开设备管理器，插拔usb，找到usb端口，更新上面的驱动,使用上面的文件目录（保证设备上电状态），更新成功后会多出一个开头为K的设备</p><pre><code>更新驱动问题点：驱动安装失败(或没有看到端口) —— 进入secure CRT终端仿真程序，登录后创建debug文件 —— touch /config/debug</code></pre><p><img src="/images/pasted-1.png" alt="upload successful"> 二、 驱动更新完成之后，网络适配器，选择设备连接的网口，修改IPV4属性</p><figure><img src="/images/pasted-2.png" alt=""><figcaption>upload successful</figcaption></figure><p>三、搜索到驱动之后，管理员登录，root/1qaz@WSX</p><p>四、执行ifconfig，查看usb的</p><pre><code> inet addr[root@xxx:~]# ifconfiglo        Link encap:Local Loopback              inet addr:127.0.0.1 &nbsp;Mask:255.0.0.0      UP LOOPBACK RUNNING &nbsp;MTU:65536 &nbsp;Metric:1      RX packets:0 errors:0 dropped:0 overruns:0 fram    e:0      TX packets:0 errors:0 dropped:0 overruns:0 carrier:0      collisions:0 txqueuelen:0       RX bytes:0 (0.0 B) &nbsp;TX bytes:0 (0.0 B)usb0      Link encap:Ethernet  HWaddr C2:65:CE:12:34:56        inet addr:10.0.0.66 &nbsp;Bcast:10.0.0.255 &nbsp;Mask:255.255.255.0      UP BROADCAST MULTICAST &nbsp;MTU:1500 &nbsp;Metric:1      RX packets:0 errors:0 dropped:0 overruns:0 frame:0      TX packets:0 errors:0 dropped:0 overruns:0 carrier:0      collisions:0 txqueuelen:1000 </code></pre><p>五、 设置nfs服务器，编辑映射表。（如遇不能保存，使用管理员权限运行nfs服务器软件，编辑完成后如遇没有显示成功需重启电脑）</p><figure><img src="/images/pasted-3.png" alt=""><figcaption>upload successful</figcaption></figure><p>D:-peephole&nbsp; -public -name:zhongyi</p><figure><img src="/images/pasted-4.png" alt=""><figcaption>upload successful</figcaption></figure><p>六、设备端串口执行命令（完整采图命令——可先创建快捷命令，时间间隔很短）</p><p>1.登陆 root 1qaz@WSX</p><p>2.创建文件、挂载设备 和 emmc</p><p>  方法一（通用）touch /tmp/qrcode.debug; mkdir /mnt/nfs; mount -t nfs -o nolock 10.0.0.6:/zhongyi /mnt/nfs; fsck_mount_mmc.sh （此步骤需要等待几秒）（需要关闭防火墙）</p><p>  方法二（特定）touch /tmp/qrcode.debug; mkdir /mnt/nfs; mount -t nfs -o nolock 10.0.0.6:/zhongyi /mnt/nfs; cd /config/;rl_app &nbsp;&nbsp;&nbsp;(这个方法可以实时保存到本地目录，但是对版本固件有要求，需支持可直接操作共享目录)</p><p>3.检查2是否全部成功 ls /mnt/emmc; ls /mnt/nfs ; ls /tmp/qrcode.debug</p><p>4.执行程序(扫码20s左右停止 Ctrl + C) ./config/rl_app</p><p>使用UartAssist.exe （上位机）下发扫码指令 AB CD 01 00 04 AF 01 00 B5 0A 0D</p><p>5.创建图片存储目录 mkdir /mnt/nfs/xx</p><p>6.从emmc里将图片移动到挂载目录 mv /mnt/emmc/* /mnt/nfs/1</p><p>备注：5-6可合并，mkdir /mnt/nfs/xx;mv /mnt/emmc/* /mnt/nfs/xx xx：每次设置均要设置不同的采图路径，否则会将此次采图数据移动到上一次采图存放的文件路径下。</p>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;摘要 （记录实习工作）&lt;/p&gt;&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="linux" scheme="https://cfdashi.github.io/categories/linux/"/>
+    
+    
+    <category term="经验" scheme="https://cfdashi.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
     
   </entry>
   
